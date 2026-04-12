@@ -3,484 +3,110 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>제10강 비뇨생식기계 | 핵의학 기술학 정리</title>
+<title>핵의학 기술학 통합 정리집 | 소화기 & 비뇨기</title>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=Space+Mono:wght@400;700&family=Bebas+Neue&display=swap" rel="stylesheet">
 <style>
   :root {
-    --bg: #0b0f1a;
-    --bg2: #111827;
-    --bg3: #1a2235;
-    --card: #131d2e;
-    --border: #1e3050;
-    --accent: #3b82f6;
-    --accent2: #60a5fa;
-    --accent3: #93c5fd;
-    --yellow: #fbbf24;
-    --red: #f87171;
-    --green: #34d399;
-    --purple: #a78bfa;
-    --text: #e2e8f0;
-    --text2: #94a3b8;
-    --text3: #64748b;
+    --bg: #0b0f1a; --bg2: #111827; --bg3: #1a2235; --card: #131d2e; --border: #1e3050;
+    --accent: #3b82f6; --accent2: #60a5fa; --accent3: #93c5fd;
+    --yellow: #fbbf24; --red: #f87171; --green: #34d399; --purple: #a78bfa;
+    --text: #e2e8f0; --text2: #94a3b8; --text3: #64748b;
   }
-
   * { margin: 0; padding: 0; box-sizing: border-box; }
-
-  body {
-    background: var(--bg);
-    color: var(--text);
-    font-family: 'Noto Sans KR', sans-serif;
-    line-height: 1.7;
-    min-height: 100vh;
-  }
-
-  /* ── HEADER ── */
-  header {
-    background: linear-gradient(135deg, #0b1629 0%, #0f2044 50%, #0b1629 100%);
-    border-bottom: 1px solid var(--border);
-    padding: 2.5rem 2rem 2rem;
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    backdrop-filter: blur(12px);
-  }
-
-  .header-inner {
-    max-width: 1100px;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    gap: 1.5rem;
-    flex-wrap: wrap;
-  }
-
-  .badge {
-    font-family: 'Space Mono', monospace;
-    font-size: 0.68rem;
-    background: var(--accent);
-    color: #fff;
-    padding: 0.25rem 0.7rem;
-    border-radius: 4px;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    white-space: nowrap;
-  }
-
-  header h1 {
-    font-size: 1.6rem;
-    font-weight: 900;
-    color: #fff;
-    letter-spacing: -0.03em;
-  }
-
+  body { background: var(--bg); color: var(--text); font-family: 'Noto Sans KR', sans-serif; line-height: 1.7; min-height: 100vh; scroll-behavior: smooth; }
+  
+  header { background: linear-gradient(135deg, #0b1629 0%, #0f2044 50%, #0b1629 100%); border-bottom: 1px solid var(--border); padding: 2.5rem 2rem 2rem; position: sticky; top: 0; z-index: 100; backdrop-filter: blur(12px); }
+  .header-inner { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap; }
+  .badge { font-family: 'Space Mono', monospace; font-size: 0.68rem; background: var(--accent); color: #fff; padding: 0.25rem 0.7rem; border-radius: 4px; letter-spacing: 0.08em; text-transform: uppercase; white-space: nowrap; }
+  header h1 { font-size: 1.6rem; font-weight: 900; color: #fff; letter-spacing: -0.03em; }
   header h1 span { color: var(--accent2); }
+  .subtitle { font-size: 0.78rem; color: var(--text3); font-family: 'Space Mono', monospace; letter-spacing: 0.05em; }
 
-  .subtitle {
-    font-size: 0.78rem;
-    color: var(--text3);
-    font-family: 'Space Mono', monospace;
-    letter-spacing: 0.05em;
-  }
-
-  /* ── NAV TABS ── */
-  .nav-tabs {
-    background: var(--bg2);
-    border-bottom: 1px solid var(--border);
-    overflow-x: auto;
-    scrollbar-width: none;
-  }
+  .nav-tabs { background: var(--bg2); border-bottom: 1px solid var(--border); overflow-x: auto; scrollbar-width: none; position: sticky; top: 110px; z-index: 90; }
   .nav-tabs::-webkit-scrollbar { display: none; }
+  .nav-tabs ul { max-width: 1200px; margin: 0 auto; display: flex; list-style: none; padding: 0 1rem; }
+  .nav-tabs li a { display: block; padding: 0.9rem 1.2rem; font-size: 0.82rem; font-weight: 500; color: var(--text3); text-decoration: none; white-space: nowrap; border-bottom: 2px solid transparent; transition: all 0.2s; }
+  .nav-tabs li a:hover, .nav-tabs li a.active { color: var(--accent2); border-color: var(--accent); }
+  .nav-sep { color: var(--border); padding: 0.9rem 0.5rem; font-weight: 300; }
 
-  .nav-tabs ul {
-    max-width: 1100px;
-    margin: 0 auto;
-    display: flex;
-    list-style: none;
-    padding: 0 1rem;
-  }
+  main { max-width: 1100px; margin: 0 auto; padding: 2rem 1.5rem 4rem; }
+  
+  /* 공통 스타일 섹션 */
+  .sec-header { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem; padding-bottom: 0.8rem; border-bottom: 1px solid var(--border); margin-top: 4rem; }
+  .sec-header:first-of-type { margin-top: 1rem; }
+  .sec-num { font-family: 'Bebas Neue', sans-serif; font-size: 2.8rem; color: var(--accent); line-height: 1; opacity: 0.4; min-width: 3rem; }
+  .sec-title { font-size: 1.35rem; font-weight: 900; letter-spacing: -0.02em; }
+  .sec-title small { display: block; font-size: 0.75rem; font-weight: 400; color: var(--text3); font-family: 'Space Mono', monospace; letter-spacing: 0.06em; margin-top: 0.15rem; }
 
-  .nav-tabs li a {
-    display: block;
-    padding: 0.9rem 1.2rem;
-    font-size: 0.82rem;
-    font-weight: 500;
-    color: var(--text3);
-    text-decoration: none;
-    white-space: nowrap;
-    border-bottom: 2px solid transparent;
-    transition: all 0.2s;
-  }
-  .nav-tabs li a:hover { color: var(--accent2); border-color: var(--accent); }
-  .nav-tabs li a.active { color: var(--accent2); border-color: var(--accent); }
-
-  /* ── MAIN LAYOUT ── */
-  main {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 2rem 1.5rem 4rem;
-  }
-
-  /* ── SECTION TITLE ── */
-  .sec-header {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    margin-bottom: 1.5rem;
-    padding-bottom: 0.8rem;
-    border-bottom: 1px solid var(--border);
-  }
-
-  .sec-num {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 2.8rem;
-    color: var(--accent);
-    line-height: 1;
-    opacity: 0.4;
-    min-width: 3rem;
-  }
-
-  .sec-title {
-    font-size: 1.35rem;
-    font-weight: 900;
-    letter-spacing: -0.02em;
-  }
-  .sec-title small {
-    display: block;
-    font-size: 0.75rem;
-    font-weight: 400;
-    color: var(--text3);
-    font-family: 'Space Mono', monospace;
-    letter-spacing: 0.06em;
-    margin-top: 0.15rem;
-  }
-
-  /* ── CARDS ── */
-  .grid-2 {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1rem;
-    margin-bottom: 1rem;
-  }
-
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem; }
   @media (max-width: 640px) { .grid-2 { grid-template-columns: 1fr; } }
+  
+  .card { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 1.2rem 1.3rem; position: relative; overflow: hidden; height: 100%; }
+  .card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: var(--accent); opacity: 0.5; }
+  .card.yellow::before { background: var(--yellow); } .card.red::before { background: var(--red); } .card.green::before { background: var(--green); } .card.purple::before { background: var(--purple); }
+  
+  .card h3 { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text3); margin-bottom: 0.8rem; font-family: 'Space Mono', monospace; }
+  .card h3 .dot { display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: var(--accent); margin-right: 0.5rem; vertical-align: middle; }
+  .card.yellow h3 .dot { background: var(--yellow); } .card.red h3 .dot { background: var(--red); } .card.green h3 .dot { background: var(--green); }
+  
+  .card-full { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 1.3rem 1.4rem; margin-bottom: 1.5rem; position: relative; overflow: hidden; }
+  .card-full::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, var(--accent), transparent); }
+  .card-full.yellow::before { background: linear-gradient(90deg, var(--yellow), transparent); } .card-full.red::before { background: linear-gradient(90deg, var(--red), transparent); } .card-full.green::before { background: linear-gradient(90deg, var(--green), transparent); }
+  .card-full h3 { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text3); margin-bottom: 0.9rem; font-family: 'Space Mono', monospace; }
 
-  .card {
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    padding: 1.2rem 1.3rem;
-    position: relative;
-    overflow: hidden;
-  }
-  .card::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; right: 0;
-    height: 2px;
-    background: var(--accent);
-    opacity: 0.5;
-  }
-  .card.yellow::before { background: var(--yellow); }
-  .card.red::before    { background: var(--red); }
-  .card.green::before  { background: var(--green); }
-  .card.purple::before { background: var(--purple); }
-
-  .card h3 {
-    font-size: 0.72rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    color: var(--text3);
-    margin-bottom: 0.8rem;
-    font-family: 'Space Mono', monospace;
-  }
-  .card h3 .dot {
-    display: inline-block;
-    width: 6px; height: 6px;
-    border-radius: 50%;
-    background: var(--accent);
-    margin-right: 0.5rem;
-    vertical-align: middle;
-  }
-  .card.yellow h3 .dot { background: var(--yellow); }
-  .card.red h3 .dot    { background: var(--red); }
-  .card.green h3 .dot  { background: var(--green); }
-  .card.purple h3 .dot { background: var(--purple); }
-
-  /* ── TAGS / PILLS ── */
-  .tag {
-    display: inline-block;
-    padding: 0.18rem 0.6rem;
-    border-radius: 4px;
-    font-size: 0.73rem;
-    font-weight: 700;
-    font-family: 'Space Mono', monospace;
-    margin-right: 0.3rem;
-    margin-bottom: 0.3rem;
-  }
-  .tag-blue   { background: rgba(59,130,246,0.15); color: var(--accent2); border: 1px solid rgba(59,130,246,0.3); }
-  .tag-yellow { background: rgba(251,191,36,0.15); color: var(--yellow);  border: 1px solid rgba(251,191,36,0.3); }
-  .tag-red    { background: rgba(248,113,113,0.15); color: var(--red);    border: 1px solid rgba(248,113,113,0.3); }
-  .tag-green  { background: rgba(52,211,153,0.15); color: var(--green);   border: 1px solid rgba(52,211,153,0.3); }
+  .tag { display: inline-block; padding: 0.18rem 0.6rem; border-radius: 4px; font-size: 0.73rem; font-weight: 700; font-family: 'Space Mono', monospace; margin-right: 0.3rem; margin-bottom: 0.3rem; }
+  .tag-blue { background: rgba(59,130,246,0.15); color: var(--accent2); border: 1px solid rgba(59,130,246,0.3); }
+  .tag-yellow { background: rgba(251,191,36,0.15); color: var(--yellow); border: 1px solid rgba(251,191,36,0.3); }
+  .tag-red { background: rgba(248,113,113,0.15); color: var(--red); border: 1px solid rgba(248,113,113,0.3); }
+  .tag-green { background: rgba(52,211,153,0.15); color: var(--green); border: 1px solid rgba(52,211,153,0.3); }
   .tag-purple { background: rgba(167,139,250,0.15); color: var(--purple); border: 1px solid rgba(167,139,250,0.3); }
 
-  /* ── KEY POINT ── */
-  .key-point {
-    background: linear-gradient(135deg, rgba(251,191,36,0.08), rgba(251,191,36,0.03));
-    border: 1px solid rgba(251,191,36,0.3);
-    border-left: 3px solid var(--yellow);
-    border-radius: 0 8px 8px 0;
-    padding: 0.8rem 1rem;
-    margin: 0.8rem 0;
-    font-size: 0.88rem;
-  }
-  .key-point .kp-label {
-    font-size: 0.65rem;
-    font-family: 'Space Mono', monospace;
-    font-weight: 700;
-    color: var(--yellow);
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    margin-bottom: 0.3rem;
-  }
+  .key-point { background: linear-gradient(135deg, rgba(251,191,36,0.08), rgba(251,191,36,0.03)); border: 1px solid rgba(251,191,36,0.3); border-left: 3px solid var(--yellow); border-radius: 0 8px 8px 0; padding: 0.8rem 1rem; margin: 0.8rem 0; font-size: 0.88rem; }
+  .key-point .kp-label { font-size: 0.65rem; font-family: 'Space Mono', monospace; font-weight: 700; color: var(--yellow); letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 0.3rem; }
+  
+  .warn-point { background: linear-gradient(135deg, rgba(248,113,113,0.08), rgba(248,113,113,0.03)); border: 1px solid rgba(248,113,113,0.3); border-left: 3px solid var(--red); border-radius: 0 8px 8px 0; padding: 0.8rem 1rem; margin: 0.8rem 0; font-size: 0.88rem; }
+  .warn-point .kp-label { font-size: 0.65rem; font-family: 'Space Mono', monospace; font-weight: 700; color: var(--red); letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 0.3rem; }
 
-  .warn-point {
-    background: linear-gradient(135deg, rgba(248,113,113,0.08), rgba(248,113,113,0.03));
-    border: 1px solid rgba(248,113,113,0.3);
-    border-left: 3px solid var(--red);
-    border-radius: 0 8px 8px 0;
-    padding: 0.8rem 1rem;
-    margin: 0.8rem 0;
-    font-size: 0.88rem;
-  }
-  .warn-point .kp-label {
-    font-size: 0.65rem;
-    font-family: 'Space Mono', monospace;
-    font-weight: 700;
-    color: var(--red);
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    margin-bottom: 0.3rem;
-  }
-
-  /* ── LIST ── */
   .list-items { list-style: none; }
-  .list-items li {
-    padding: 0.35rem 0;
-    font-size: 0.88rem;
-    padding-left: 1.2rem;
-    position: relative;
-    color: var(--text);
-    border-bottom: 1px solid rgba(255,255,255,0.04);
-  }
+  .list-items li { padding: 0.35rem 0; font-size: 0.88rem; padding-left: 1.2rem; position: relative; color: var(--text); border-bottom: 1px solid rgba(255,255,255,0.04); }
   .list-items li:last-child { border-bottom: none; }
-  .list-items li::before {
-    content: '▸';
-    position: absolute;
-    left: 0;
-    color: var(--accent);
-    font-size: 0.7rem;
-    top: 0.45rem;
-  }
-  .hi-y { color: var(--yellow); font-weight: 700; }
-  .hi-r { color: var(--red); font-weight: 700; }
-  .hi-b { color: var(--accent2); font-weight: 700; }
-  .hi-g { color: var(--green); font-weight: 700; }
-
-  /* ── TABLE ── */
-  .data-table {
-    width: 100%;
-    border-collapse: collapse;
-    font-size: 0.82rem;
-    margin: 0.5rem 0;
-  }
-  .data-table th {
-    background: rgba(59,130,246,0.1);
-    color: var(--accent2);
-    font-weight: 700;
-    padding: 0.55rem 0.8rem;
-    text-align: left;
-    border: 1px solid var(--border);
-    font-family: 'Space Mono', monospace;
-    font-size: 0.72rem;
-    letter-spacing: 0.06em;
-  }
-  .data-table td {
-    padding: 0.5rem 0.8rem;
-    border: 1px solid var(--border);
-    vertical-align: middle;
-  }
+  .list-items li::before { content: '▸'; position: absolute; left: 0; color: var(--accent); font-size: 0.7rem; top: 0.45rem; }
+  
+  .hi-y { color: var(--yellow); font-weight: 700; } .hi-r { color: var(--red); font-weight: 700; } .hi-b { color: var(--accent2); font-weight: 700; } .hi-g { color: var(--green); font-weight: 700; }
+  
+  .data-table { width: 100%; border-collapse: collapse; font-size: 0.82rem; margin: 0.5rem 0; }
+  .data-table th { background: rgba(59,130,246,0.1); color: var(--accent2); font-weight: 700; padding: 0.55rem 0.8rem; text-align: left; border: 1px solid var(--border); font-family: 'Space Mono', monospace; font-size: 0.72rem; letter-spacing: 0.06em; }
+  .data-table td { padding: 0.5rem 0.8rem; border: 1px solid var(--border); vertical-align: middle; }
   .data-table tr:nth-child(even) td { background: rgba(255,255,255,0.02); }
-  .data-table tr:hover td { background: rgba(59,130,246,0.05); }
 
-  /* ── FLOW ── */
-  .flow {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    flex-wrap: wrap;
-    margin: 0.6rem 0;
-  }
-  .flow-box {
-    background: rgba(59,130,246,0.1);
-    border: 1px solid rgba(59,130,246,0.3);
-    border-radius: 6px;
-    padding: 0.45rem 0.9rem;
-    font-size: 0.82rem;
-    font-weight: 600;
-    color: var(--accent2);
-    white-space: nowrap;
-  }
+  .flow { display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap; margin: 0.6rem 0; }
+  .flow-box { background: rgba(59,130,246,0.1); border: 1px solid rgba(59,130,246,0.3); border-radius: 6px; padding: 0.45rem 0.9rem; font-size: 0.82rem; font-weight: 600; color: var(--accent2); white-space: nowrap; }
   .flow-arr { color: var(--text3); font-size: 1rem; }
 
-  /* ── COMPARE BOXES ── */
-  .compare-2 {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 0.8rem;
-    margin: 0.8rem 0;
-  }
+  .compare-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem; margin: 0.8rem 0; }
   @media (max-width: 540px) { .compare-2 { grid-template-columns: 1fr; } }
-  .cmp-box {
-    border-radius: 8px;
-    padding: 0.9rem 1rem;
-    font-size: 0.84rem;
-  }
-  .cmp-ok  { background: rgba(52,211,153,0.08); border: 1px solid rgba(52,211,153,0.25); }
+  .cmp-box { border-radius: 8px; padding: 0.9rem 1rem; font-size: 0.84rem; }
+  .cmp-ok { background: rgba(52,211,153,0.08); border: 1px solid rgba(52,211,153,0.25); } 
   .cmp-bad { background: rgba(248,113,113,0.08); border: 1px solid rgba(248,113,113,0.25); }
   .cmp-box h4 { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.5rem; font-family: 'Space Mono', monospace; }
-  .cmp-ok h4  { color: var(--green); }
-  .cmp-bad h4 { color: var(--red); }
+  .cmp-ok h4 { color: var(--green); } .cmp-bad h4 { color: var(--red); }
 
-  /* ── EXAM QUESTION ── */
-  .exam-box {
-    background: var(--bg3);
-    border: 1px solid rgba(167,139,250,0.25);
-    border-left: 3px solid var(--purple);
-    border-radius: 0 10px 10px 0;
-    padding: 1rem 1.2rem;
-    margin: 1.2rem 0;
-  }
-  .exam-label {
-    font-size: 0.63rem;
-    font-family: 'Space Mono', monospace;
-    font-weight: 700;
-    color: var(--purple);
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    margin-bottom: 0.5rem;
-  }
+  .exam-box { background: var(--bg3); border: 1px solid rgba(167,139,250,0.25); border-left: 3px solid var(--purple); border-radius: 0 10px 10px 0; padding: 1rem 1.2rem; margin: 1.2rem 0; }
+  .exam-label { font-size: 0.63rem; font-family: 'Space Mono', monospace; font-weight: 700; color: var(--purple); letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 0.5rem; }
   .exam-q { font-size: 0.88rem; font-weight: 700; margin-bottom: 0.6rem; }
   .exam-a { font-size: 0.84rem; color: var(--green); font-weight: 700; }
   .exam-desc { font-size: 0.8rem; color: var(--text2); margin-top: 0.4rem; }
 
-  /* ── SECTION SEPARATOR ── */
-  .section-sep {
-    margin: 3rem 0 2.5rem;
-    height: 1px;
-    background: linear-gradient(90deg, var(--accent) 0%, transparent 100%);
-    opacity: 0.3;
-  }
+  .chapter-divider { margin: 5rem 0 3rem; text-align: center; position: relative; }
+  .chapter-divider::before { content: ''; position: absolute; top: 50%; left: 0; width: 100%; height: 1px; background: var(--border); z-index: 1; }
+  .chapter-divider span { background: var(--bg); padding: 0 1.5rem; position: relative; z-index: 2; font-family: 'Bebas Neue', sans-serif; font-size: 2rem; color: var(--accent); letter-spacing: 0.1em; }
 
-  /* ── RENOGRAM ── */
-  .renogram {
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    padding: 1.3rem;
-    margin: 1rem 0;
-  }
-  .renogram-stages {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 0.8rem;
-    margin-top: 0.8rem;
-  }
-  @media (max-width: 540px) { .renogram-stages { grid-template-columns: 1fr; } }
-  .r-stage {
-    border-radius: 8px;
-    padding: 0.8rem;
-    font-size: 0.82rem;
-  }
-  .r-1 { background: rgba(59,130,246,0.1); border: 1px solid rgba(59,130,246,0.25); }
-  .r-2 { background: rgba(52,211,153,0.1); border: 1px solid rgba(52,211,153,0.25); }
-  .r-3 { background: rgba(251,191,36,0.1); border: 1px solid rgba(251,191,36,0.25); }
-  .r-stage .r-title { font-size: 0.72rem; font-weight: 700; font-family: 'Space Mono', monospace; letter-spacing: 0.08em; margin-bottom: 0.4rem; }
-  .r-1 .r-title { color: var(--accent2); }
-  .r-2 .r-title { color: var(--green); }
-  .r-3 .r-title { color: var(--yellow); }
-
-  /* ── TOC OVERVIEW ── */
-  .overview-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 0.8rem;
-    margin: 1.5rem 0 2.5rem;
-  }
-  .ov-card {
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    padding: 1rem 1.1rem;
-    text-decoration: none;
-    transition: all 0.2s;
-    display: block;
-  }
+  .overview-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 0.8rem; margin: 1.5rem 0 2.5rem; }
+  .ov-card { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 1rem 1.1rem; text-decoration: none; transition: all 0.2s; display: block; }
   .ov-card:hover { border-color: var(--accent); transform: translateY(-2px); }
   .ov-num { font-family: 'Bebas Neue', sans-serif; font-size: 2rem; color: var(--accent); opacity: 0.5; line-height: 1; }
-  .ov-name { font-size: 0.9rem; font-weight: 700; margin-top: 0.3rem; }
+  .ov-name { font-size: 0.9rem; font-weight: 700; color: var(--text); margin-top: 0.3rem; }
   .ov-sub { font-size: 0.72rem; color: var(--text3); margin-top: 0.2rem; font-family: 'Space Mono', monospace; }
-
-  /* ── FULL CARD ── */
-  .card-full {
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    padding: 1.3rem 1.4rem;
-    margin-bottom: 1rem;
-    position: relative;
-    overflow: hidden;
-  }
-  .card-full::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; right: 0;
-    height: 2px;
-    background: linear-gradient(90deg, var(--accent), transparent);
-  }
-  .card-full.yellow::before { background: linear-gradient(90deg, var(--yellow), transparent); }
-  .card-full.red::before    { background: linear-gradient(90deg, var(--red), transparent); }
-  .card-full.green::before  { background: linear-gradient(90deg, var(--green), transparent); }
-  .card-full.purple::before { background: linear-gradient(90deg, var(--purple), transparent); }
-
-  .card-full h3 {
-    font-size: 0.72rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    color: var(--text3);
-    margin-bottom: 0.9rem;
-    font-family: 'Space Mono', monospace;
-  }
-
-  /* ── DRUG COMPARE ── */
-  .drug-compare {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 0.8rem;
-    margin: 0.8rem 0;
-  }
-  @media (max-width: 540px) { .drug-compare { grid-template-columns: 1fr; } }
-  .drug-box {
-    border-radius: 8px;
-    padding: 0.9rem 1rem;
-    font-size: 0.84rem;
-  }
-  .drug-dtpa { background: rgba(59,130,246,0.08); border: 1px solid rgba(59,130,246,0.25); }
-  .drug-mag3 { background: rgba(52,211,153,0.08); border: 1px solid rgba(52,211,153,0.25); }
-  .drug-box h4 { font-size: 0.78rem; font-weight: 700; font-family: 'Space Mono', monospace; letter-spacing: 0.06em; margin-bottom: 0.5rem; }
-  .drug-dtpa h4 { color: var(--accent2); }
-  .drug-mag3 h4 { color: var(--green); }
 </style>
 </head>
 <body>
@@ -489,686 +115,312 @@
   <div class="header-inner">
     <span class="badge">핵의학 기술학</span>
     <div>
-      <h1>제10강 <span>비뇨생식기계</span></h1>
-      <div class="subtitle">Nuclear Medicine Technology · 중간고사 정리집</div>
+      <h1>전공 <span>중간고사</span> 통합 정리집</h1>
+      <div class="subtitle">소화기계(제9강) & 비뇨생식기계(제10강)</div>
     </div>
   </div>
 </header>
 
 <nav class="nav-tabs">
   <ul>
-    <li><a href="#overview" class="active">전체 개요</a></li>
-    <li><a href="#dmsa">정적검사 (DMSA)</a></li>
-    <li><a href="#dynamic">동적검사 기본</a></li>
-    <li><a href="#lasix">이뇨제 검사</a></li>
-    <li><a href="#ace">ACE 억제제 검사</a></li>
-    <li><a href="#transplant">이식 콩팥 검사</a></li>
-    <li><a href="#exam-q">기출 문제</a></li>
+    <li><a href="#ch9-top" class="active">소화기 개요</a></li>
+    <li><a href="#salivary">침샘</a></li>
+    <li><a href="#get">위장배출</a></li>
+    <li><a href="#bleeding">출혈/맥켈</a></li>
+    <li><a href="#liver">간·담도·지라</a></li>
+    <li class="nav-sep">|</li>
+    <li><a href="#ch10-top">비뇨기 개요</a></li>
+    <li><a href="#dmsa">DMSA(정적)</a></li>
+    <li><a href="#dynamic">동적기본</a></li>
+    <li><a href="#lasix">이뇨제/ACE</a></li>
+    <li><a href="#transplant">이식콩팥</a></li>
+    <li><a href="#exam-q">기출문제</a></li>
   </ul>
 </nav>
 
 <main>
 
-  <!-- ─────────── OVERVIEW ─────────── -->
-  <section id="overview">
-    <div class="sec-header" style="margin-top:1rem;">
+  <section id="ch9-top">
+    <div class="chapter-divider"><span>CHAPTER 09. DIGESTIVE SYSTEM</span></div>
+    
+    <div class="sec-header">
       <div class="sec-num">00</div>
-      <div>
-        <div class="sec-title">비뇨생식기계 콩팥검사 전체 개요
-          <small>RENAL SCINTIGRAPHY OVERVIEW</small>
-        </div>
+      <div class="sec-title">소화기계 검사 총괄
+        <small>G-I SYSTEM OVERVIEW</small>
       </div>
+    </div>
+
+    <div class="warn-point">
+      <div class="kp-label">핵심 주의사항</div>
+      모든 핵의학 검사는 바륨 조영제 검사 <span class="hi-r">전</span>에 시행! 조영제가 감마선을 흡수해 위음성이나 이상 소견(Artifact)을 유발함.
     </div>
 
     <div class="overview-grid">
-      <a href="#dmsa" class="ov-card">
+      <div class="ov-card">
         <div class="ov-num">01</div>
-        <div class="ov-name">정적(Static) 검사</div>
-        <div class="ov-sub">DMSA Scintigraphy</div>
-      </a>
-      <a href="#dynamic" class="ov-card">
+        <div class="ov-name">침샘 검사</div>
+        <div class="ov-sub">Salivary Gland</div>
+      </div>
+      <div class="ov-card">
         <div class="ov-num">02</div>
-        <div class="ov-name">동적(Dynamic) 검사</div>
-        <div class="ov-sub">DTPA · MAG3 · Hippuran</div>
-      </a>
-      <a href="#lasix" class="ov-card">
-        <div class="ov-num">③</div>
-        <div class="ov-name">이뇨제 동적 검사</div>
-        <div class="ov-sub">Lasix(Furosemide)</div>
-      </a>
-      <a href="#ace" class="ov-card">
-        <div class="ov-num">③</div>
-        <div class="ov-name">ACE 억제제 검사</div>
-        <div class="ov-sub">Captopril Scan</div>
-      </a>
-      <a href="#transplant" class="ov-card">
-        <div class="ov-num">④</div>
-        <div class="ov-name">이식 콩팥 검사</div>
-        <div class="ov-sub">Transplant Scintigraphy</div>
-      </a>
-    </div>
-
-    <!-- 방사성의약품 총정리 -->
-    <div class="card-full yellow">
-      <h3>⭐ 방사성의약품 핵심 비교 총정리 (★ 시험 필수)</h3>
-      <table class="data-table">
-        <thead>
-          <tr>
-            <th>약품</th>
-            <th>검사 종류</th>
-            <th>집적 기전</th>
-            <th>집적 부위</th>
-            <th>측정 지표</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><span class="hi-y">⁹⁹ᵐTc-DMSA</span></td>
-            <td>정적 (Static)</td>
-            <td><span class="tag tag-green">능동이동</span></td>
-            <td>세뇨관 <span class="hi-r">(토리여과 거침)</span></td>
-            <td>콩팥겉질 형태</td>
-          </tr>
-          <tr>
-            <td><span class="hi-b">⁹⁹ᵐTc-DTPA</span></td>
-            <td>동적 (Dynamic)</td>
-            <td><span class="tag tag-blue">단순확산</span></td>
-            <td>토리(사구체)</td>
-            <td><span class="hi-b">GFR</span> (사구체여과율)</td>
-          </tr>
-          <tr>
-            <td><span class="hi-g">⁹⁹ᵐTc-MAG3</span></td>
-            <td>동적 (Dynamic)</td>
-            <td><span class="tag tag-green">능동이동</span></td>
-            <td>세뇨관</td>
-            <td><span class="hi-g">ERPF</span> 표준제재</td>
-          </tr>
-          <tr>
-            <td><span class="hi-g">¹²³I / ¹³¹I-hippuran</span></td>
-            <td>동적 (Dynamic)</td>
-            <td><span class="tag tag-green">능동이동</span></td>
-            <td>세뇨관</td>
-            <td>세뇨관 기능</td>
-          </tr>
-        </tbody>
-      </table>
-      <div class="key-point">
-        <div class="kp-label">⚡ 핵심 암기</div>
-        비뇨기계 방사성의약품은 <span class="hi-y">DMSA 하나만 빼고 전부 능동이동!</span><br>
-        DTPA만 단순확산 → <span class="hi-b">GFR 측정에 사용</span>
+        <div class="ov-name">위장배출시간</div>
+        <div class="ov-sub">GET Scan</div>
+      </div>
+      <div class="ov-card">
+        <div class="ov-num">03</div>
+        <div class="ov-name">출혈 & 맥켈</div>
+        <div class="ov-sub">Bleeding / Meckel</div>
+      </div>
+      <div class="ov-card">
+        <div class="ov-num">04</div>
+        <div class="ov-name">간·담도·지라</div>
+        <div class="ov-sub">Liver & Spleen</div>
       </div>
     </div>
   </section>
 
-  <div class="section-sep"></div>
+  <section id="salivary">
+    <div class="sec-header">
+      <div class="sec-num">01</div>
+      <div class="sec-title">침샘 영상검사
+        <small>SALIVARY GLAND SCAN</small>
+      </div>
+    </div>
+    <div class="grid-2">
+      <div class="card yellow">
+        <h3><span class="dot"></span>의약품 & 기전</h3>
+        <ul class="list-items">
+          <li>의약품: <span class="hi-y">⁹⁹ᵐTcO₄⁻</span></li>
+          <li>기전: <span class="hi-r">능동이동</span> (침샘, 갑상선, 위점막 집적)</li>
+          <li>전처치: 2~4시간 금식</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3><span class="dot"></span>필기 포인트</h3>
+        <ul class="list-items">
+          <li><span class="hi-r">혀밑샘(설하선)</span>은 작아서 영상에 안 보임</li>
+          <li>자극제: 레모나, 신맛 사탕 (침 분비 유도)</li>
+          <li>갑상선 보이면 Tc 사용한 것 확인 가능</li>
+        </ul>
+      </div>
+    </div>
+  </section>
 
-  <!-- ─────────── 정적 검사 ─────────── -->
+  <section id="get">
+    <div class="sec-header">
+      <div class="sec-num">02</div>
+      <div class="sec-title">위장배출시간 스캔 (GET)
+        <small>GASTRIC EMPTYING TIME</small>
+      </div>
+    </div>
+    <div class="card-full green">
+      <h3>배출 패턴 비교</h3>
+      <div class="compare-2">
+        <div class="cmp-ok">
+          <h4>유동식 (Liquid)</h4>
+          약 12분 소요 / <span class="hi-g">지수함수형</span> 감소
+        </div>
+        <div class="cmp-bad">
+          <h4>고형식 (Solid)</h4>
+          약 50분 소요 / <span class="hi-y">S자형(5자형)</span> 감소
+        </div>
+      </div>
+      <div class="key-point">
+        <div class="kp-label">분석 기준</div>
+        음식물 양이 <span class="hi-y">50%</span>로 줄어드는 시간(T 1/2) 측정. 정상은 60±20분.
+      </div>
+    </div>
+  </section>
+
+  <section id="bleeding">
+    <div class="sec-header">
+      <div class="sec-num">03</div>
+      <div class="sec-title">출혈 & 맥켈 게실
+        <small>BLEEDING & MECKEL'S SCAN</small>
+      </div>
+    </div>
+    <div class="grid-2">
+      <div class="card red">
+        <h3><span class="dot"></span>위장관 출혈</h3>
+        <ul class="list-items">
+          <li>의약품: <span class="hi-y">⁹⁹ᵐTc-RBC</span> (가장 빈번)</li>
+          <li><span class="hi-r">금식 불필요</span> (유일하게 금식 안 함)</li>
+          <li>반드시 <span class="hi-y">지연 영상</span> 촬영 필수</li>
+        </ul>
+      </div>
+      <div class="card purple">
+        <h3><span class="dot"></span>맥켈 게실 (Meckel's)</h3>
+        <ul class="list-items">
+          <li>의약품: <span class="hi-y">⁹⁹ᵐTcO₄⁻</span></li>
+          <li>전처치: <span class="hi-p">시메티딘</span> (위점막 섭취 증가)</li>
+          <li>자세: <span class="hi-r">좌측와위 (Lt. decubitus)</span> - 유일함</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="liver">
+    <div class="sec-header">
+      <div class="sec-num">04</div>
+      <div class="sec-title">간·담도·지라 영상
+        <small>LIVER, HIDA & SPLEEN</small>
+      </div>
+    </div>
+    <div class="card-full">
+      <h3>주요 검사 요약</h3>
+      <ul class="list-items">
+        <li><strong>간(Liver):</strong> ⁹⁹ᵐTc-phytate / <span class="hi-r">탐식작용</span> / 후면상(POST)이 지라 구분 명확</li>
+        <li><strong>간담도(HIDA):</strong> <span class="hi-y">BrIDA (Mebrofenin)</span> / 지방식(Fatty Meal) 준비</li>
+        <li><strong>지라(Spleen):</strong> <span class="hi-r">49도에서 20분 가열</span>한 장애 RBC 사용 / <span class="hi-r">세포격리</span> 기전</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="ch10-top">
+    <div class="chapter-divider"><span>CHAPTER 10. URINARY SYSTEM</span></div>
+
+    <div class="sec-header">
+      <div class="sec-num">00</div>
+      <div class="sec-title">비뇨기계 검사 총괄
+        <small>RENAL SYSTEM OVERVIEW</small>
+      </div>
+    </div>
+
+    <div class="card-full yellow">
+      <h3>⭐ 방사성의약품 핵심 비교 (★ 국시 빈출)</h3>
+      <table class="data-table">
+        <thead>
+          <tr><th>약품</th><th>검사</th><th>기전</th><th>측정 지표</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><span class="hi-y">⁹⁹ᵐTc-DMSA</span></td><td>정적(Static)</td><td><span class="tag tag-green">능동이동</span></td><td>콩팥겉질 형태</td></tr>
+          <tr><td><span class="hi-b">⁹⁹ᵐTc-DTPA</span></td><td>동적(Dynamic)</td><td><span class="tag tag-blue">단순확산</span></td><td><span class="hi-b">GFR</span> (사구체여과율)</td></tr>
+          <tr><td><span class="hi-g">⁹⁹ᵐTc-MAG3</span></td><td>동적(Dynamic)</td><td><span class="tag tag-green">능동이동</span></td><td>ERPF 표준</td></tr>
+        </tbody>
+      </table>
+      <div class="key-point">
+        <div class="kp-label">암기 팁</div>
+        비뇨기계 의약품은 <span class="hi-r">DMSA 빼고 전부 능동이동</span>은 아님! <span class="hi-b">DTPA만 단순확산</span>임을 기억할 것.
+      </div>
+    </div>
+  </section>
+
   <section id="dmsa">
     <div class="sec-header">
       <div class="sec-num">01</div>
-      <div>
-        <div class="sec-title">정적(Static) 콩팥 검사
-          <small>DMSA SCINTIGRAPHY</small>
-        </div>
+      <div class="sec-title">정적(Static) 콩팥 검사
+        <small>DMSA SCINTIGRAPHY</small>
       </div>
     </div>
-
     <div class="grid-2">
       <div class="card yellow">
-        <h3><span class="dot"></span>임상적 적응증</h3>
+        <h3><span class="dot"></span>적응증 & 특징</h3>
         <ul class="list-items">
-          <li><span class="hi-y">신우신염</span> 진단 (콩팥 염증 소견)</li>
-          <li>신장의 <span class="hi-y">위치·크기·모양</span> 평가</li>
-          <li>말굽콩팥, 이소콩팥 확인</li>
+          <li><span class="hi-y">신우신염</span> 진단 (결손상 관찰)</li>
+          <li>콩팥 위치, 크기, 모양 평가</li>
+          <li>주사 후 1~3시간 대기 후 촬영</li>
         </ul>
       </div>
       <div class="card">
-        <h3><span class="dot"></span>방사성의약품</h3>
+        <h3><span class="dot"></span>촬영 방향</h3>
         <ul class="list-items">
-          <li>약품: <span class="hi-b">⁹⁹ᵐTc-DMSA</span></li>
-          <li>집적기전: <span class="hi-g">능동이동</span></li>
-          <li>집적부위: <span class="hi-y">세뇨관</span> (토리여과 거침)</li>
-          <li>주사 후 1시간 내 투여량의 <span class="hi-r">40~50%</span>가 몸쪽 세뇨관에 결합</li>
-          <li>콩팥겉질(피질, Cortex) 영상화</li>
-          <li><span class="hi-b">모양 확인에 가장 좋음</span></li>
+          <li>기본: <span class="hi-b">후면상(POST)</span> - 콩팥이 후벽장기임</li>
+          <li>예외: <span class="hi-r">전면상(ANT)</span> - 말굽콩팥, 이소콩팥 확인 시</li>
         </ul>
-      </div>
-    </div>
-
-    <!-- 검사방법 -->
-    <div class="card-full">
-      <h3>검사 방법</h3>
-      <div class="flow" style="margin-bottom:1rem;">
-        <div class="flow-box">DMSA 정맥주사</div>
-        <div class="flow-arr">→</div>
-        <div class="flow-box" style="background:rgba(251,191,36,0.1);border-color:rgba(251,191,36,0.3);color:var(--yellow);">1~3시간 대기</div>
-        <div class="flow-arr">→</div>
-        <div class="flow-box">방광 비우기</div>
-        <div class="flow-arr">→</div>
-        <div class="flow-box">촬영</div>
-      </div>
-      <ul class="list-items">
-        <li>조준기: <span class="hi-y">저에너지 고해상도</span> 조준기</li>
-        <li>자세: 바로 누운 자세 (검출기를 콩팥 중심에 위치)</li>
-        <li>촬영 방향: <span class="hi-b">ANT(전면상), POST(후면상), RPO 30°(우후면사위상), LPO 30°(좌후면사위상)</span></li>
-        <li>소아: <span class="hi-r">1.5~2배 확대</span>하여 영상 획득</li>
-      </ul>
-      <div class="compare-2" style="margin-top:0.8rem;">
-        <div class="cmp-box cmp-ok">
-          <h4>✓ 후면상 (POST) — 기본</h4>
-          후벽장기 → 후면상이 가장 선명<br>일반적 콩팥 검사는 후면상 촬영
-        </div>
-        <div class="cmp-box cmp-bad" style="background:rgba(59,130,246,0.08);border-color:rgba(59,130,246,0.25);">
-          <h4 style="color:var(--accent2);">⚠ 전면상 (ANT) — 예외</h4>
-          <span class="hi-b">말굽콩팥</span>, <span class="hi-b">이소콩팥</span> (위치 이상) 확인 시 유용
-        </div>
-      </div>
-    </div>
-
-    <!-- 영상분석 -->
-    <div class="card-full green">
-      <h3>영상 분석 & 판독</h3>
-      <ul class="list-items">
-        <li>콩팥겉질(신피질) 영상화 → <span class="hi-g">형태적 관찰 (위치·크기·모양)</span></li>
-        <li>전면상·후면상 양쪽 콩팥에 <span class="hi-b">ROI(관심영역)</span> 설정 → 총 계수(total count) 산출</li>
-        <li>정상 좌·우 비율: <span class="hi-y">44~56%</span> (양측이 거의 동일)</li>
-      </ul>
-      <div class="key-point">
-        <div class="kp-label">📌 신우신염 소견</div>
-        신우신염 → 염증 부위의 섭취 감소 → 영상에서 <span class="hi-r">음성상(결손, 검게 갉아먹은 모양)</span> 으로 나타남
       </div>
     </div>
   </section>
 
-  <div class="section-sep"></div>
-
-  <!-- ─────────── 동적 기본 ─────────── -->
   <section id="dynamic">
     <div class="sec-header">
       <div class="sec-num">02</div>
-      <div>
-        <div class="sec-title">동적(Dynamic) 콩팥 검사 기본
-          <small>DTPA · MAG3 SCINTIGRAPHY</small>
-        </div>
+      <div class="sec-title">동적(Dynamic) 콩팥 검사
+        <small>DTPA & MAG3</small>
       </div>
     </div>
-
-    <div class="grid-2">
-      <div class="card yellow">
-        <h3><span class="dot"></span>임상적 적응증</h3>
-        <ul class="list-items">
-          <li>콩팥 <span class="hi-y">관류(혈류)와 기능</span> 평가</li>
-          <li>콩팥 <span class="hi-y">세뇨관 기능</span> 진단</li>
-          <li><span class="hi-r">요로 폐쇄</span>의 진단</li>
-        </ul>
-        <div class="warn-point">
-          <div class="kp-label">목적</div>
-          동적영상 = 신장 혈류상태 + <span class="hi-r">콩팥의 흡수·배설기능 평가</span>
-        </div>
-      </div>
-      <div class="card">
-        <h3><span class="dot"></span>방사성의약품 핵심 비교</h3>
-        <div class="drug-compare">
-          <div class="drug-box drug-dtpa">
-            <h4>⁹⁹ᵐTc-DTPA</h4>
-            집적기전: <span class="hi-b">단순확산</span><br>
-            집적부위: 토리(사구체)<br>
-            측정: <span class="hi-b">GFR</span>
-          </div>
-          <div class="drug-box drug-mag3">
-            <h4>⁹⁹ᵐTc-MAG3</h4>
-            집적기전: <span class="hi-g">능동이동</span><br>
-            집적부위: 세뇨관<br>
-            측정: <span class="hi-g">ERPF</span> 표준
-          </div>
-        </div>
-        <div style="font-size:0.8rem;color:var(--text3);margin-top:0.5rem;">
-          ¹²³I/¹³¹I-Hippuran도 능동이동 → 세뇨관
-        </div>
-      </div>
-    </div>
-
-    <!-- 전처치 -->
     <div class="card-full red">
-      <h3>전처치 ★★ 시험 빈출</h3>
-      <div class="grid-2" style="margin-bottom:0.8rem;">
-        <div>
-          <div class="hi-b" style="font-weight:700;font-size:0.88rem;margin-bottom:0.4rem;">① 수분 섭취</div>
-          <ul class="list-items">
-            <li>검사 <span class="hi-y">30~60분 전</span> 물 <span class="hi-y">300~500ml</span> 음용</li>
-            <li>요량이 <span class="hi-b">2~3ml/min 이상</span> 유지되도록</li>
-            <li>수분 부족 시 DTPA가 신우(renal pelvis)에 오래 저류</li>
-          </ul>
-        </div>
-        <div>
-          <div class="hi-b" style="font-weight:700;font-size:0.88rem;margin-bottom:0.4rem;">② 검사 전 방광 비우기</div>
-          <ul class="list-items">
-            <li>방광 충만 시 콩팥기능 <span class="hi-r">지연 소견</span> 초래</li>
-            <li>방광 내 압력 증가 → 배설 장애</li>
-          </ul>
-        </div>
-      </div>
-      <div class="key-point">
-        <div class="kp-label">📌 수분섭취 + 방광비우기가 필요한 검사</div>
-        ① 콩팥 동적검사 &nbsp;|&nbsp; ② Bone Scan &nbsp;|&nbsp; ③ PET 검사 (Torso 검사)
-      </div>
-    </div>
-
-    <!-- 금지약물 -->
-    <div class="card-full red">
-      <h3>금지 약물 — 전처치 중단 기간 ★★★</h3>
-      <table class="data-table">
-        <thead>
-          <tr>
-            <th>약물</th>
-            <th>중단 시기</th>
-            <th>이유</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><span class="hi-r">이뇨제 (라식스, Lasix)</span></td>
-            <td><span class="hi-y">검사 전 1주일</span></td>
-            <td>콩팥 기능을 빠르게 도와줌 → 검사 결과 왜곡</td>
-          </tr>
-          <tr>
-            <td><span class="hi-r">캡토프릴 (Captopril)</span></td>
-            <td><span class="hi-y">검사 2일 전</span></td>
-            <td>콩팥 기능을 느리게 함 → 검사 결과 왜곡</td>
-          </tr>
-          <tr>
-            <td><span class="hi-r">조영제</span></td>
-            <td><span class="hi-y">최소 1주일, 가능하면 2주 후</span></td>
-            <td>콩팥 기능에 영향</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-
-    <!-- 검사 방법 -->
-    <div class="card-full">
-      <h3>검사 방법 & 영상 획득</h3>
+      <h3>전처치 & 금지약물 (필수 암기)</h3>
       <ul class="list-items">
-        <li>주사 방법: <span class="hi-y">순간정맥주사 (Bolus injection)</span></li>
-        <li>자세: 바로 누운 자세, 검출기는 <span class="hi-b">최소 콩팥과 방광 포함</span></li>
-        <li>조준기: <span class="hi-b">저에너지 고분해능 평행구멍형</span> 조준기</li>
-        <li style="color:var(--red);">⚠ ¹³¹I-hippuran만 <span class="hi-r">고에너지</span> 평행구멍형 조준기 사용!</li>
-        <li>검출기 위치: <span class="hi-y">환자 등 뒤(후면)</span> — 이식환자 제외!</li>
+        <li><strong>수분 섭취:</strong> 30~60분 전 300~500ml 물 음용</li>
+        <li><strong>이뇨제(라식스):</strong> 검사 <span class="hi-r">1주일 전</span> 중단</li>
+        <li><strong>캡토프릴:</strong> 검사 <span class="hi-r">2일 전</span> 중단</li>
+        <li><strong>조영제:</strong> 최소 1주일 후 검사 가능</li>
       </ul>
-
-      <div class="flow" style="margin-top:1rem;">
-        <div class="flow-box">순간주사 (Bolus)</div>
-        <div class="flow-arr">→</div>
-        <div class="flow-box" style="background:rgba(59,130,246,0.1);border-color:rgba(59,130,246,0.3);color:var(--accent2);">콩팥 관류(혈류)스캔<br><small>Phase 1 — 1분간</small></div>
-        <div class="flow-arr">→</div>
-        <div class="flow-box" style="background:rgba(52,211,153,0.1);border-color:rgba(52,211,153,0.3);color:var(--green);">동적 콩팥스캔<br><small>Phase 2 — 약 20분</small></div>
-      </div>
-
-      <div class="key-point" style="margin-top:1rem;">
-        <div class="kp-label">📌 정적검사 vs 동적검사 차이점</div>
-        동적검사 영상에는 콩팥뿐만 아니라 <span class="hi-y">요관(Ureter)과 방광(Bladder)</span>도 함께 나타남!
-      </div>
     </div>
-
-    <!-- 레노그램 -->
-    <div class="renogram">
-      <div style="font-size:0.72rem;font-weight:700;font-family:'Space Mono',monospace;color:var(--text3);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.6rem;">레노그램 (Renogram) — 시간·방사능 곡선 (T-A Curve)</div>
-      <div style="font-size:0.84rem;margin-bottom:0.8rem;">동적검사를 통해 획득 → 신장·요관 기능 평가 / 총 <span class="hi-b">3단계</span>로 구분</div>
-      <div class="renogram-stages">
-        <div class="r-stage r-1">
-          <div class="r-title">제 1기 — 혈관상 (Vascular Phase)</div>
-          주사 후 <span class="hi-b">15~20초</span> 급격 상승<br>
-          약 <span class="hi-b">20~40초</span>에 정점 도달<br>
-          콩팥 관류 반영
-        </div>
-        <div class="r-stage r-2">
-          <div class="r-title">제 2기 — 분비상 (Secretory Phase)</div>
-          주사 후 <span class="hi-g">3~5분</span>에 Tmax 정점<br>
-          1기보다 완만하게 상승<br>
-          세뇨관에 축적되는 과정
-        </div>
-        <div class="r-stage r-3">
-          <div class="r-title">제 3기 — 배설상 (Excretory Phase)</div>
-          3~5분 이후 <span class="hi-y">하향곡선</span><br>
-          T½: <span class="hi-y">7~10분</span><br>
-          방사능이 방광으로 이동
-        </div>
+    
+    <div class="card-full">
+      <h3>레노그램 (T-A Curve) 3단계</h3>
+      <div class="flow">
+        <div class="flow-box">1기: 혈관상<br><small>15~20초 급상승</small></div>
+        <div class="flow-arr">→</div>
+        <div class="flow-box" style="background:rgba(52,211,153,0.1);color:var(--green);">2기: 분비상<br><small>3~5분 정점(Tmax)</small></div>
+        <div class="flow-arr">→</div>
+        <div class="flow-box" style="background:rgba(251,191,36,0.1);color:var(--yellow);">3기: 배설상<br><small>T 1/2: 7~10분</small></div>
       </div>
     </div>
   </section>
 
-  <div class="section-sep"></div>
-
-  <!-- ─────────── 이뇨제 검사 ─────────── -->
   <section id="lasix">
     <div class="sec-header">
-      <div class="sec-num">③</div>
-      <div>
-        <div class="sec-title">이뇨제를 이용한 동적 콩팥 검사
-          <small>DIURETIC (LASIX) RENAL SCINTIGRAPHY</small>
-        </div>
+      <div class="sec-num">03</div>
+      <div class="sec-title">특수 동적 검사
+        <small>LASIX & CAPTOPRIL</small>
       </div>
     </div>
-
     <div class="grid-2">
-      <div class="card yellow">
-        <h3><span class="dot"></span>시행 시점 & 목적</h3>
+      <div class="card blue">
+        <h3><span class="dot"></span>이뇨제(Lasix) 검사</h3>
+        <p style="font-size:0.85rem; margin-bottom:0.5rem;">폐쇄 vs 비폐쇄 물콩팥증 감별</p>
         <ul class="list-items">
-          <li>동적 검사 종료 후 <span class="hi-y">배설기능 저하</span> 시 추가 시행</li>
-          <li>콩팥 <span class="hi-r">부분적 폐쇄</span>가 보일 경우</li>
-          <li>요로 <span class="hi-b">폐쇄 vs 비폐쇄</span> 감별</li>
+          <li><span class="hi-g">비폐쇄:</span> 라식스 투여 후 계수 감소</li>
+          <li><span class="hi-r">폐쇄성:</span> 라식스에도 계수 유지(막힘)</li>
         </ul>
       </div>
-      <div class="card yellow">
-        <h3><span class="dot"></span>임상적 적응증</h3>
+      <div class="card green">
+        <h3><span class="dot"></span>ACE 억제제(Captopril)</h3>
+        <p style="font-size:0.85rem; margin-bottom:0.5rem;">신혈관성 고혈압 진단</p>
         <ul class="list-items">
-          <li>비폐쇄성 vs 폐쇄성 <span class="hi-y">물콩팥증(수신증)</span> 감별</li>
-          <li>폐쇄 <span class="hi-b">부위</span> 감별</li>
-          <li>사구체여과율 손상 정도 평가</li>
-          <li>콩팥 기능 손실 확인</li>
+          <li>투여 전후 차이가 <span class="hi-g">크면 → 정상</span></li>
+          <li>투여 전후 차이가 <span class="hi-r">작으면 → 고혈압(비정상)</span></li>
         </ul>
-      </div>
-    </div>
-
-    <div class="card-full">
-      <h3>검사 방법</h3>
-      <div class="flow">
-        <div class="flow-box">① DTPA 또는 MAG3 주사</div>
-        <div class="flow-arr">→</div>
-        <div class="flow-box">20분간 영상 촬영</div>
-        <div class="flow-arr">→</div>
-        <div class="flow-box" style="background:rgba(251,191,36,0.1);border-color:rgba(251,191,36,0.3);color:var(--yellow);">② 이뇨제(라식스) 투여</div>
-        <div class="flow-arr">→</div>
-        <div class="flow-box">추가 20분 촬영</div>
-      </div>
-      <div class="key-point">
-        <div class="kp-label">포인트</div>
-        기본 동적검사 + 이뇨제 검사 = <span class="hi-y">총 2회</span> 촬영
-      </div>
-    </div>
-
-    <!-- 결과 판독 -->
-    <div class="card-full green">
-      <h3>결과 판독 ★★ — 이뇨제 투여 후 반응</h3>
-      <div class="compare-2">
-        <div class="cmp-box cmp-ok">
-          <h4>✓ 비폐쇄성 (기능 더딤)</h4>
-          이뇨제 사용 후 방사능 계수 <span class="hi-g">감소</span><br>
-          → 기능이 더디지만 폐쇄는 없음<br>
-          → 수신증이 있어도 배설 가능
-        </div>
-        <div class="cmp-box cmp-bad">
-          <h4>✗ 폐쇄성</h4>
-          이뇨제를 써도 방사능이 <span class="hi-r">그대로 잔류</span><br>
-          → 진짜 막혀있는 것<br>
-          → 이뇨제에 반응 없음
-        </div>
-      </div>
-
-      <div style="margin-top:1rem;">
-        <div style="font-size:0.8rem;font-weight:700;color:var(--text3);margin-bottom:0.5rem;font-family:'Space Mono',monospace;letter-spacing:0.06em;">RENOGRAM 분류 (Lasix 기준)</div>
-        <table class="data-table">
-          <thead><tr><th>분류</th><th>의미</th></tr></thead>
-          <tbody>
-            <tr><td><span class="hi-g">I군</span></td><td>정상</td></tr>
-            <tr><td><span class="hi-r">II군</span></td><td>폐쇄성 요로</td></tr>
-            <tr><td><span class="hi-b">IIIa군</span></td><td>비폐쇄성 확장성 요로</td></tr>
-            <tr><td><span class="hi-y">IIIb군</span></td><td>부분 폐쇄성 요로 또는 콩팥기능장애 (이뇨제 반응 저하)</td></tr>
-          </tbody>
-        </table>
       </div>
     </div>
   </section>
 
-  <div class="section-sep"></div>
-
-  <!-- ─────────── ACE 억제제 ─────────── -->
-  <section id="ace">
-    <div class="sec-header">
-      <div class="sec-num">③</div>
-      <div>
-        <div class="sec-title">ACE 억제제 콩팥 검사
-          <small>CAPTOPRIL RENAL SCINTIGRAPHY ⭐ 중요!</small>
-        </div>
-      </div>
-    </div>
-
-    <div class="card yellow">
-      <h3><span class="dot"></span>임상적 적응증 (유일!)</h3>
-      <div style="font-size:1.05rem;font-weight:900;color:var(--yellow);text-align:center;padding:0.8rem 0;">
-        콩팥성 고혈압 (신혈관성 고혈압) 진단
-      </div>
-    </div>
-
-    <div class="card-full" style="margin-top:1rem;">
-      <h3>검사 방법 — 2번 실시</h3>
-      <div class="compare-2">
-        <div class="cmp-box" style="background:rgba(59,130,246,0.08);border:1px solid rgba(59,130,246,0.25);">
-          <h4 style="color:var(--accent2);">a. 기저스캔 (Baseline)</h4>
-          ACE억제제 투여 <span class="hi-r">없이</span> 검사<br>
-          → 저선량 MAG3 또는 DTPA 주사<br>
-          → 아무것도 안 넣고 동적검사
-        </div>
-        <div class="cmp-box" style="background:rgba(251,191,36,0.08);border:1px solid rgba(251,191,36,0.25);">
-          <h4 style="color:var(--yellow);">b. 캡토프릴 스캔</h4>
-          캡토프릴 <span class="hi-y">25mg 또는 50mg</span> 경구 투여<br>
-          → 투여 <span class="hi-y">1시간 후</span> MAG3 또는 DTPA 투여<br>
-          → 검사 시행
-        </div>
-      </div>
-    </div>
-
-    <div class="card-full green">
-      <h3>결과 판독 ★★★ 핵심 로직</h3>
-      <div class="key-point">
-        <div class="kp-label">💡 핵심 원리</div>
-        캡토프릴(ACE억제제) = 신장 기능 저하 물질<br>
-        <span class="hi-y">캡토프릴 먹으면 정상인은 사구체여과율이 저하되어야 한다!</span>
-      </div>
-      <div class="compare-2" style="margin-top:0.8rem;">
-        <div class="cmp-box cmp-ok">
-          <h4>✓ 정상 (고혈압 아님)</h4>
-          캡토프릴 투여 전후 <span class="hi-g">차이가 크다</span><br>
-          → 약에 반응해서 기능이 잘 떨어짐<br>
-          → 콩팥 혈관은 정상
-        </div>
-        <div class="cmp-box cmp-bad">
-          <h4>✗ 비정상 (콩팥성 고혈압)</h4>
-          캡토프릴 투여 전후 <span class="hi-r">차이가 작다</span><br>
-          → 이미 기능 상실 → 변화 없음<br>
-          → 콩팥기능 상실 = 신혈관성 고혈압
-        </div>
-      </div>
-      <div class="warn-point" style="margin-top:0.8rem;">
-        <div class="kp-label">⚡ 암기 공식</div>
-        전후 차이 <span class="hi-g">크면 → 정상</span> &nbsp;|&nbsp; 전후 차이 <span class="hi-r">작으면 → 비정상 (콩팥기능 상실)</span>
-      </div>
-    </div>
-  </section>
-
-  <div class="section-sep"></div>
-
-  <!-- ─────────── 이식 콩팥 ─────────── -->
   <section id="transplant">
     <div class="sec-header">
-      <div class="sec-num">④</div>
-      <div>
-        <div class="sec-title">이식 콩팥 검사
-          <small>TRANSPLANT RENAL SCINTIGRAPHY ⭐ 국시 빈출!</small>
-        </div>
+      <div class="sec-num">04</div>
+      <div class="sec-title">이식 콩팥 검사
+        <small>TRANSPLANT RENAL SCAN</small>
       </div>
     </div>
-
-    <div class="grid-2">
-      <div class="card yellow">
-        <h3><span class="dot"></span>임상적 적응증</h3>
-        <ul class="list-items">
-          <li>이식 콩팥의 <span class="hi-y">관류 & 기능</span> 평가</li>
-          <li><span class="hi-r">신장이식 거부반응</span> 검사</li>
-        </ul>
-      </div>
-      <div class="card red">
-        <h3><span class="dot"></span>이식 콩팥의 특징</h3>
-        <ul class="list-items">
-          <li>이식 콩팥 위치: <span class="hi-r">골반 내 (방광 근처)</span></li>
-          <li>이식: <span class="hi-y">1개만</span> 이식</li>
-          <li>보통 <span class="hi-b">오른쪽 전면</span>에 위치</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="card-full red">
-      <h3>검사 방법 — ★★★ 다른 검사와 차이점!</h3>
-      <table class="data-table">
-        <thead>
-          <tr>
-            <th>항목</th>
-            <th>일반 콩팥검사</th>
-            <th>이식 콩팥검사</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>검출기 위치</td>
-            <td>환자 <span class="hi-b">등 뒤 (후면)</span></td>
-            <td><span class="hi-r">전면 (ANT)</span></td>
-          </tr>
-          <tr>
-            <td>방사성의약품</td>
-            <td>DTPA, MAG3</td>
-            <td><span class="hi-y">MAG3 가장 많이 사용</span> (DTPA도 가능)</td>
-          </tr>
-          <tr>
-            <td>영상 특징</td>
-            <td>양측 콩팥 + 요관 + 방광</td>
-            <td>방광과 가까운 <span class="hi-r">콩팥 1개</span>, 보통 <span class="hi-r">우측전면상</span></td>
-          </tr>
-        </tbody>
-      </table>
-      <div class="key-point" style="margin-top:0.8rem;">
-        <div class="kp-label">⚡ 암기 핵심</div>
-        모든 콩팥검사는 후면 검출기 → <span class="hi-r">이식환자는 예외! 전면(ANT) 검출기!</span><br>
-        검사 영상에 콩팥이 <span class="hi-y">우측전면</span>에 1개만 나타남
-      </div>
+    <div class="warn-point">
+      <div class="kp-label">⭐ 이식환자 예외사항</div>
+      이식 콩팥은 골반(방광 근처)에 위치하므로, 검출기를 반드시 <span class="hi-r">전면(ANT)</span>에 배치함! 콩팥은 1개만 보임.
     </div>
   </section>
 
-  <div class="section-sep"></div>
-
-  <!-- ─────────── 기출 문제 ─────────── -->
   <section id="exam-q">
-    <div class="sec-header">
-      <div class="sec-num">Q</div>
-      <div>
-        <div class="sec-title">기출 문제 정리
-          <small>PAST EXAM QUESTIONS</small>
-        </div>
-      </div>
-    </div>
-
+    <div class="chapter-divider"><span>FINAL CHECK: PAST EXAMS</span></div>
+    
     <div class="exam-box">
-      <div class="exam-label">2019 제47회 방사선사 국가시험 3교시 Q.37</div>
-      <div class="exam-q">콩팥겉질(피질) 신티그라피 영상에 사용된 방사성의약품은?</div>
-      <div class="exam-a">정답: ③ ⁹⁹ᵐTc-DMSA</div>
-      <div class="exam-desc">ANT, POST, RPO, LPO 촬영 → 정적 콩팥검사 → DMSA</div>
+      <div class="exam-label">Q. 콩팥겉질 형태 및 감염 여부 평가 약품은?</div>
+      <div class="exam-q">정답: ⁹⁹ᵐTc-DMSA</div>
     </div>
-
     <div class="exam-box">
-      <div class="exam-label">2020 제48회 방사선사 국가시험 2교시 Q.72</div>
-      <div class="exam-q">콩팥겉질의 위치, 형태 및 감염 여부를 평가하기 위해 사용하는 방사성의약품은?</div>
-      <div class="exam-a">정답: ③ ⁹⁹ᵐTc-DMSA</div>
-      <div class="exam-desc">콩팥겉질 평가 = 정적검사 = DMSA</div>
+      <div class="exam-label">Q. 토리여과율(GFR) 측정에 사용되는 약품은?</div>
+      <div class="exam-q">정답: ⁹⁹ᵐTc-DTPA</div>
     </div>
-
     <div class="exam-box">
-      <div class="exam-label">2021 제49회 방사선사 국가시험 2교시 Q.72</div>
-      <div class="exam-q">콩팥 정적(static) 검사에 대한 설명으로 옳은 것은?</div>
-      <div class="exam-a">정답: ④ 콩팥의 위치, 크기 및 모양을 평가한다.</div>
-      <div class="exam-desc">
-        ① 집적기전 = 능동이동(탐식X) &nbsp;|&nbsp; ② 배설기능 평가 = 동적검사<br>
-        ③ 주사 후 1~3시간 후 검사 &nbsp;|&nbsp; ⑤ MAG3 = 동적검사 약품
-      </div>
-    </div>
-
-    <div class="exam-box">
-      <div class="exam-label">2019 제47회 방사선사 국가시험 2교시 Q.72</div>
-      <div class="exam-q">정상인의 콩팥 동적검사에 관한 설명으로 옳은 것은?</div>
-      <div class="exam-a">정답: ① 순간주사한다.</div>
-      <div class="exam-desc">
-        ② 전면상 X → 후벽장기이므로 후면상 &nbsp;|&nbsp; ③ DTPA=단순확산, MAG3=능동이동<br>
-        ④ 투여량은 정답 X &nbsp;|&nbsp; ⑤ DMSA는 정적검사용
-      </div>
-    </div>
-
-    <div class="exam-box">
-      <div class="exam-label">2021 제49회 방사선사 국가시험 3교시 Q.37</div>
-      <div class="exam-q">Renal Scan(99mTc-DTPA) 영상에 대한 설명으로 옳은 것은?</div>
-      <div class="exam-a">정답: ⑤ 토리여과기능 평가</div>
-      <div class="exam-desc">DTPA = 단순확산 → 사구체(토리) 여과율 측정</div>
-    </div>
-
-    <div class="exam-box">
-      <div class="exam-label">2022 제50회 방사선사 국가시험 2교시 Q.68</div>
-      <div class="exam-q">동적신장 검사(dynamic renal scintigraphy)에 사용하는 방사성의약품은?</div>
-      <div class="exam-a">정답: ④ ⁹⁹ᵐTc-MAG₃</div>
-      <div class="exam-desc">⑤ DMSA = 정적검사용</div>
-    </div>
-
-    <div class="exam-box">
-      <div class="exam-label">2023 제51회 방사선사 국가시험 2교시 Q.68</div>
-      <div class="exam-q">콩팥 토리여과율(glomerular filtration rate) 검사에 사용하는 방사성의약품은?</div>
-      <div class="exam-a">정답: ② ⁹⁹ᵐTc-DTPA</div>
-      <div class="exam-desc">GFR = DTPA (단순확산, 사구체)</div>
-    </div>
-
-    <div class="exam-box">
-      <div class="exam-label">2018 제46회 방사선사 국가시험 2교시 Q.72</div>
-      <div class="exam-q">콩팥 이식환자 동적검사에서 검출기의 위치로 옳은 것은?</div>
-      <div class="exam-a">정답: ② 전면</div>
-      <div class="exam-desc">이식환자 = 예외! 전면(ANT) 검출기, 검사 영상에 콩팥이 우측전면에 1개</div>
-    </div>
-
-    <div class="exam-box">
-      <div class="exam-label">2022 제50회 방사선사 국가시험 3교시 Q.37</div>
-      <div class="exam-q">이식콩팥 영상에 대한 설명으로 옳은 것은?</div>
-      <div class="exam-a">정답: ③ 이식콩팥의 기능을 평가한다.</div>
-      <div class="exam-desc">
-        ① DMSA X → MAG3 사용 &nbsp;|&nbsp; ② 저에너지 조준기 (Tc계열) &nbsp;|&nbsp; ④ 동적영상 &nbsp;|&nbsp; ⑤ 전면상 설정
-      </div>
-    </div>
-
-    <!-- 최종 요약 -->
-    <div class="card-full yellow" style="margin-top:2rem;">
-      <h3>⭐ 최종 핵심 암기 요약</h3>
-      <table class="data-table">
-        <thead>
-          <tr><th>키워드</th><th>핵심 답</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>콩팥겉질 / 형태 / 신우신염 진단</td><td><span class="hi-y">→ DMSA (정적)</span></td></tr>
-          <tr><td>GFR, 사구체여과율</td><td><span class="hi-b">→ DTPA (단순확산)</span></td></tr>
-          <tr><td>세뇨관 기능, ERPF 표준</td><td><span class="hi-g">→ MAG3 (능동이동)</span></td></tr>
-          <tr><td>이식콩팥 검출기 위치</td><td><span class="hi-r">→ 전면 (ANT)</span></td></tr>
-          <tr><td>이식콩팥 가장 많이 쓰는 약품</td><td><span class="hi-y">→ MAG3</span></td></tr>
-          <tr><td>폐쇄 vs 비폐쇄 감별</td><td><span class="hi-b">→ 이뇨제(라식스) 동적검사</span></td></tr>
-          <tr><td>콩팥성 고혈압 진단</td><td><span class="hi-g">→ ACE억제제(캡토프릴) 검사</span></td></tr>
-          <tr><td>캡토프릴 중단 기간</td><td><span class="hi-r">→ 2일 전</span></td></tr>
-          <tr><td>이뇨제(라식스) 중단 기간</td><td><span class="hi-r">→ 1주일 전</span></td></tr>
-          <tr><td>조영제 후 동적검사 가능 시기</td><td><span class="hi-r">→ 최소 1주일, 가능하면 2주 후</span></td></tr>
-          <tr><td>¹³¹I-hippuran 조준기</td><td><span class="hi-r">→ 고에너지 (나머지는 저에너지)</span></td></tr>
-          <tr><td>전면상이 필요한 경우</td><td><span class="hi-y">→ 말굽콩팥, 이소콩팥 (이식환자)</span></td></tr>
-          <tr><td>정상 좌·우 콩팥 비율</td><td><span class="hi-b">→ 44~56%</span></td></tr>
-          <tr><td>레노그램 Tmax (분비기 정점)</td><td><span class="hi-b">→ 3~5분</span></td></tr>
-          <tr><td>레노그램 T½</td><td><span class="hi-b">→ 7~10분</span></td></tr>
-        </tbody>
-      </table>
+      <div class="exam-label">Q. 이식 콩팥 동적검사 시 검출기 위치는?</div>
+      <div class="exam-q">정답: 전면(ANT)</div>
     </div>
   </section>
 
 </main>
 
 <script>
-  // 탭 active 처리
+  // 내비게이션 활성화 로직
   const links = document.querySelectorAll('.nav-tabs a');
   const sections = document.querySelectorAll('section');
 
@@ -1176,7 +428,7 @@
     let current = '';
     sections.forEach(s => {
       const top = s.getBoundingClientRect().top;
-      if (top < 160) current = s.id;
+      if (top < 200) current = s.id;
     });
     links.forEach(l => {
       l.classList.toggle('active', l.getAttribute('href') === '#' + current);
@@ -1185,15 +437,21 @@
 
   window.addEventListener('scroll', updateActive);
 
+  // 부드러운 스크롤
   links.forEach(link => {
     link.addEventListener('click', e => {
       e.preventDefault();
       const target = document.querySelector(link.getAttribute('href'));
-      if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      if (target) {
+        window.scrollTo({
+          top: target.offsetTop - 180,
+          behavior: 'smooth'
+        });
+      }
     });
   });
 
-  // 카드 입장 애니메이션
+  // 애니메이션 효과
   const observer = new IntersectionObserver(entries => {
     entries.forEach(e => {
       if (e.isIntersecting) {
@@ -1201,12 +459,12 @@
         e.target.style.transform = 'translateY(0)';
       }
     });
-  }, { threshold: 0.08 });
+  }, { threshold: 0.1 });
 
-  document.querySelectorAll('.card, .card-full, .exam-box, .renogram').forEach(el => {
+  document.querySelectorAll('.card, .card-full, .exam-box, .warn-point, .key-point').forEach(el => {
     el.style.opacity = '0';
-    el.style.transform = 'translateY(18px)';
-    el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+    el.style.transform = 'translateY(20px)';
+    el.style.transition = 'all 0.6s ease-out';
     observer.observe(el);
   });
 </script>
